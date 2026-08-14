@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
           config_timezone: Asia/Shanghai
           base: header, activity, community, repositories, metadata
           plugin_languages: yes
@@ -22,4 +22,3 @@ jobs:
           plugin_lines: yes
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
-          plugin_achievements: yes
